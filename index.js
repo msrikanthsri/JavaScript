@@ -1,59 +1,69 @@
-console.log("Hey from file")
-let name="sri";
-let age=100;
+//functions
+//hoisting
+addCartValue()
+function addCartValue(){
+    console.log("Functions");
+};
 
-console.log(name);
-console.log(age);
+//arrow function
+/*addCartValue1();
+var addCartValue1=()=>{
+    console.log("arrow function");
+};*/
 
- name="srikanth";
- age=200;
+//this keyword
+const obj1={
+   name:"sri",
+   getThis:function () {
+       console.log("inside obj");
+   } ,
 
-console.log(name);
-console.log(age);
+};
+//console.log(this);
+obj1.getThis();
 
 
-//array
+//Array & Objects
+const array1=[1,2,3,4,5,6]
 
-var num=[1,2,3,4,5,6]
-console.log(num[1])
+//add value to end of array
+array1.push(7)
+console.log(array1);
 
-//object
+//delete the last element from array
+array1.pop(7)
+console.log(array1)
+//add value at the index 0
+array1.unshift(8)
+console.log(array1)
+//delete index 0 value
+array1.shift()
+console.log(array1)
 
-var obj={
+//array for loop
+array1.forEach(element => {
+    console.log(element)
+});
+
+//objects
+
+const student={
     name:"srikanth",
-    id:123,
-    section:"c"
+    section:"as"
 }
 
-console.log(obj)
-console.log(obj.name)
+console.log(Object.keys(student))
+console.log(Object.values(student))
+console.log(Object.entries(student))
 
-//obj with array
+//freeze
 
-var obj1=[
-    {
+const student1={
     name:"srikanth",
-    id:123,
-    section:"c"
-    },
-    {
-        name:"prashanth",
-        id:167,
-        section:"c"
-        },
-        {
-        name:"kranthi",
-        id:1221,
-        section:"c"
-        },
-]
+    section:"as"
+}
 
-console.log(obj1)
-console.log(obj[1])
-
-
-var a=2;
-var b="2";
-
-a===b ? console.log("true"):console.log("false");
-a==b ? console.log("true"):console.log("false");
+Object.freeze(student1)
+student1.name="prashanth"
+console.log(student1);
+console.log(Object.isFrozen(student1))
