@@ -1,69 +1,33 @@
-//functions
-//hoisting
-addCartValue()
-function addCartValue(){
-    console.log("Functions");
-};
+//Ajax - Asynchronous javascript and XML
 
-//arrow function
-/*addCartValue1();
-var addCartValue1=()=>{
-    console.log("arrow function");
-};*/
+//Promises
+fetch("https://jsonplaceholder.typicode.com/users")
+.then((result)=>result.json())
+.then((data)=>console.log(data))
+.catch((error)=>console.log(error))
 
-//this keyword
-const obj1={
-   name:"sri",
-   getThis:function () {
-       console.log("inside obj");
-   } ,
+//Async Await
 
-};
-//console.log(this);
-obj1.getThis();
-
-
-//Array & Objects
-const array1=[1,2,3,4,5,6]
-
-//add value to end of array
-array1.push(7)
-console.log(array1);
-
-//delete the last element from array
-array1.pop(7)
-console.log(array1)
-//add value at the index 0
-array1.unshift(8)
-console.log(array1)
-//delete index 0 value
-array1.shift()
-console.log(array1)
-
-//array for loop
-array1.forEach(element => {
-    console.log(element)
-});
-
-//objects
-
-const student={
-    name:"srikanth",
-    section:"as"
+async function getData(){
+    try{
+    const result=await fetch("https://jsonplaceholder.typicode.com/users")
+    const data=await result.json();
+    console.log(data);
+    }catch(error){
+        console.log(error)
+    }
 }
+getData()
 
-console.log(Object.keys(student))
-console.log(Object.values(student))
-console.log(Object.entries(student))
 
-//freeze
+//let vs var
+var name="sri";
+let age=10000;
+console.log(window.name)
+console.log(window.age)
 
-const student1={
-    name:"srikanth",
-    section:"as"
-}
 
-Object.freeze(student1)
-student1.name="prashanth"
-console.log(student1);
-console.log(Object.isFrozen(student1))
+var apple="apple"
+let mango="mango"
+var apple="banana"
+//let mango="mango" // error bcoz let allows variable to use only once 
